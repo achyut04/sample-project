@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <div>
       <Header />
-      <main className="screen-height p-2">{children}</main>
+      <main className="p-2">{children}</main>
       <Footer />
     </div>
   );

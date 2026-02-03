@@ -43,7 +43,7 @@ const Header = () => {
     redirect("/login");
   };
   return (
-    <nav className=" flex border-b 3 border-black-500 items-center justify-between px-0 bg-gray-700 text-white">
+    <nav className=" flex border-b 3 border-black-500 items-center justify-between px-0 bg-gray-700 text-white px-3">
       <div>
         <Link href="/landing">
           <Image
@@ -77,7 +77,7 @@ const Header = () => {
           </li>
         ))}
       </ul>
-      <div className="p-3 relative group">
+      <div className="p-2 relative group">
         <div>
           <Image
             src="/assets/icons/user-profile.svg"
