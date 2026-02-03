@@ -1,29 +1,54 @@
+"use client";
+import Link from "next/link";
+
 const Footer = () => {
+  const footerSections = [
+    {
+      name: "Features",
+      items: [
+        { title: "Product Master", route: "/master/product-master" },
+        { title: "Invoice", route: "/oms/invoice" },
+        { title: "Picknote", route: "/oms/picknote" },
+        { title: "Purchase Order", route: "/inbound/purchase-order" },
+      ],
+    },
+    {
+      name: "Account & Support",
+      items: [
+        { title: "User and Auth", route: "/settings/user-auth" },
+        { title: "Import History", route: "/settings/import-history" },
+        { title: "Privacy Policy", route: "/privacy" },
+        { title: "Terms of Service", route: "/terms" },
+        { title: "Contact Us", route: "/contact" },
+      ],
+    },
+  ];
+
   return (
-    <footer className="flex p-2 border-t 2 justify-center ">
-      This is footer. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quod
-      accusantium, ea exercitationem alias assumenda iste cumque aspernatur
-      nobis magnam facilis culpa quidem commodi dolor minima accusamus
-      doloremque harum praesentium dolorum placeat molestiae necessitatibus qui
-      expedita porro. Quidem repudiandae facilis vel consequatur quaerat
-      voluptates mollitia. Voluptas laborum quod porro sunt dolores facere odit?
-      Qui, rerum magnam. Aliquid eaque rerum incidunt molestiae esse soluta
-      inventore illo odit aliquam adipisci est ad, quo minima porro id
-      repellendus numquam nostrum nemo suscipit. Vel asperiores obcaecati
-      fugiat. Quos, ipsa. Excepturi maxime adipisci soluta hic alias,
-      repudiandae cupiditate iure laboriosam error velit ex, vero obcaecati
-      praesentium, ea ad quae explicabo! Nulla eum, nam iste facere impedit
-      nostrum sunt corporis culpa itaque, ab inventore officiis, similique
-      eveniet dolorum numquam? Illum quae officiis culpa blanditiis nesciunt
-      minima, ipsa unde enim dolorum maxime itaque maiores tenetur illo eveniet
-      obcaecati ipsam quia reprehenderit dicta accusantium officia. Aliquid,
-      adipisci! Id ipsam reprehenderit libero alias. Quas obcaecati nemo
-      nesciunt, dicta tenetur molestiae, tempore laboriosam quam ex facere
-      adipisci in! Laudantium, cum, eligendi quia quidem eveniet quisquam
-      reprehenderit quaerat iure accusantium minima, iusto officiis. Ad
-      laudantium esse facere quibusdam voluptate odit saepe est voluptatibus ut,
-      quae ex? Impedit optio in nemo doloribus!
+    <footer className="flex flex-col justify-center items-center border-t  bg-gray-700 text-white py-10 px-10">
+      <div className="flex justify-center gap-10">
+        {footerSections.map((section) => (
+          <div key={section.name} className="flex flex-col gap-3">
+            <h3 className="font-bold text-lg">{section.name}</h3>
+            <ul className="flex flex-col gap-2">
+              {section.items.map((item) => (
+                <li key={item.title}>
+                  <Link
+                    href={item.route}
+                    className=" hover:text-blue-600 transition-colors text-sm"
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div className=" mt-10 pt-6 border-t border-gray-100 text-center text-sm ">
+        © 2026 Medkart Pharmacy. All rights reserved.
+      </div>
     </footer>
   );
 };
