@@ -1,0 +1,11 @@
+export const SET_PRODUCT_LIST = "SET_PRODUCT_LIST";
+export const GET_PRODUCT_LIST = "GET_PRODUCT_LIST";
+export const GET_PRODUCT_DETAILS = "GET_PRODUCT_DETAILS";
+export const SET_PRODUCT_DETAILS = "SET_PRODUCT_DETAILS";
+
+export const getProductList = (page: number) => {
+  return {
+    type: GET_PRODUCT_LIST,
+    payload: page,
+  };
+};

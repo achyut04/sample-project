@@ -1,3 +1,5 @@
+import AuthGuard from "./components/AuthGuard";
+import StoreProvider from "./components/Providers/StoreProvider";
 import "./globals.css";
 
 export default function RootLayout({
@@ -7,7 +9,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <StoreProvider>
+          <AuthGuard>{children}</AuthGuard>
+        </StoreProvider>
+      </body>
     </html>
   );
 }

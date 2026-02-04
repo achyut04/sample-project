@@ -40,7 +40,7 @@ const Header = () => {
   ];
 
   const handleLogout = () => {
-    redirect("/login");
+    localStorage.clear();
   };
   return (
     <nav className=" flex border-b 3 border-black-500 items-center justify-between px-0 bg-gray-700 text-white px-3">
