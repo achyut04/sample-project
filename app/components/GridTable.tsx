@@ -33,7 +33,7 @@ const GridTable = ({
       <div className="flex justify-center ">
         <table className="table-fixed w-full content-center">
           <thead>
-            <tr className="border border-zinc-700 bg-gray-200 text-zinc-800">
+            <tr className="border border-zinc-200 bg-gray-200 text-zinc-800">
               {columns.map((item: any, idx: number) => {
                 return (
                   <th className="p-2" key={idx}>
@@ -48,7 +48,7 @@ const GridTable = ({
               tableItems?.map((item: any, idx: number) => {
                 return (
                   <tr
-                    className="border border-zinc-700 bg-white text-zinc-800"
+                    className="border border-zinc-200 bg-white text-zinc-800"
                     key={idx}
                   >
                     {columns.map((colitem: any, indx: number) => {
@@ -76,7 +76,7 @@ const GridTable = ({
             <button
               onClick={() => handlePageChange(pagination.current_page - 1)}
               disabled={pagination.current_page === 1}
-              className="px-4 py-2 text-sm border rounded bg-white hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed hover:cursor-pointer text-gray-700"
+              className="px-4 py-2 text-sm border rounded border-zinc-200 bg-white hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed hover:cursor-pointer text-gray-700"
             >
               Previous
             </button>
@@ -84,7 +84,7 @@ const GridTable = ({
             <button
               onClick={() => handlePageChange(pagination.current_page + 1)}
               disabled={pagination.current_page === pagination.last_page}
-              className="px-4 py-2 text-sm border rounded bg-white hover:bg-gray-100 hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed text-gray-700"
+              className="px-4 py-2 text-sm border rounded border-zinc-200 bg-white hover:bg-gray-100 hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed text-gray-700"
             >
               Next
             </button>
